@@ -353,7 +353,7 @@ ul {
 /* When you add real images, style them like this: */
 .portfolio-item img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  max-height: 320px;
   object-fit: contain;
   background: #111;
   display: block;
