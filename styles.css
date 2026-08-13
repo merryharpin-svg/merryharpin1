@@ -1,0 +1,510 @@
+/* ============================================
+   Merry Harpin — Artist Website
+   Colors: Black, White, Pale Blue
+   Easy to edit — change values below
+   ============================================ */
+
+:root {
+  /* Color palette — edit these to change the whole site */
+  --black: #0a0a0a;
+  --black-soft: #141414;
+  --white: #f7f7f7;
+  --white-pure: #ffffff;
+  --pale-blue: #a8c5d4;
+  --pale-blue-soft: #c5d9e4;
+  --pale-blue-muted: #7a9aab;
+  --gray: #8a8a8a;
+  --gray-dark: #2a2a2a;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding: 7rem 0;
+  --container-max: 1100px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ========== NAVIGATION ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(168, 197, 212, 0.12);
+}
+
+.nav-inner {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--pale-blue);
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 20px;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--white);
+  position: absolute;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+.menu-toggle span:first-child {
+  top: 4px;
+}
+
+.menu-toggle span:last-child {
+  bottom: 4px;
+}
+
+.menu-toggle.active span:first-child {
+  top: 9px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active span:last-child {
+  bottom: 9px;
+  transform: rotate(-45deg);
+}
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pale-blue);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 9vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--white-pure);
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--pale-blue-soft);
+  margin-bottom: 2.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid var(--pale-blue);
+  color: var(--pale-blue);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--pale-blue);
+  color: var(--black);
+}
+
+.hero-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--pale-blue));
+  opacity: 0.5;
+}
+
+/* ========== SECTIONS ========== */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+
+.section-number {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--pale-blue-muted);
+  font-weight: 400;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: var(--white-pure);
+}
+
+/* ========== ABOUT ========== */
+.about {
+  background: var(--black-soft);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  line-height: 1.5;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.about-text p {
+  color: var(--gray);
+  margin-bottom: 1.25rem;
+  max-width: 52ch;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pale-blue-muted);
+}
+
+.meta-value,
+.meta-item a {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.meta-item a:hover {
+  color: var(--pale-blue);
+}
+
+/* ========== WORK / PORTFOLIO ========== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.portfolio-item {
+  group: true;
+}
+
+.portfolio-placeholder {
+  aspect-ratio: 4 / 5;
+  background: var(--gray-dark);
+  border: 1px solid rgba(168, 197, 212, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-placeholder {
+  border-color: var(--pale-blue);
+  background: #1a1a1a;
+}
+
+.portfolio-placeholder span {
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+.portfolio-placeholder small {
+  font-size: 0.75rem;
+  color: var(--pale-blue-muted);
+}
+
+/* When you add real images, style them like this: */
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.03);
+}
+
+.portfolio-info {
+  padding: 1.1rem 0 0.25rem;
+}
+
+.portfolio-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  color: var(--white);
+}
+
+.portfolio-info p {
+  font-size: 0.8rem;
+  color: var(--gray);
+  letter-spacing: 0.03em;
+}
+
+/* ========== CONTACT ========== */
+.contact {
+  background: var(--black-soft);
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.contact .lead {
+  margin-bottom: 3rem;
+  color: var(--gray);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(168, 197, 212, 0.15);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.contact-link:hover {
+  border-color: var(--pale-blue);
+  background: rgba(168, 197, 212, 0.05);
+}
+
+.contact-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pale-blue-muted);
+}
+
+.contact-value {
+  font-size: 1.15rem;
+  color: var(--white);
+  font-weight: 400;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(168, 197, 212, 0.1);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.footer-note {
+  margin-top: 0.4rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--pale-blue-muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --section-padding: 5rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(168, 197, 212, 0.12);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-line {
+    height: 50px;
+  }
+}
+
+/* Small helper for when images are added */
+.portfolio-item {
+  overflow: hidden;
+}
