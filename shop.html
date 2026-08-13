@@ -10,25 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Extra styles just for the shop */
     .shop-hero {
-      padding: 8rem 0 4rem;
+      padding: 8rem 0 3.5rem;
       text-align: center;
     }
     .shop-hero h1 {
       font-family: var(--font-serif);
       font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 400;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
     .shop-hero p {
       color: var(--gray);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
     .shop-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2.75rem;
       padding-bottom: 5rem;
     }
     .product-card {
@@ -39,38 +38,58 @@
     .product-card:hover {
       border-color: var(--pale-blue);
     }
-    .product-card img {
+    .product-main-img {
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
       display: block;
+      background: #111;
+    }
+    .product-thumbs {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.6rem 0.75rem 0;
+      overflow-x: auto;
+    }
+    .product-thumbs img {
+      width: 52px;
+      height: 65px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 1px solid transparent;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+    }
+    .product-thumbs img:hover,
+    .product-thumbs img.active {
+      opacity: 1;
+      border-color: var(--pale-blue);
     }
     .product-info {
-      padding: 1.4rem 1.25rem 1.6rem;
+      padding: 1.1rem 1.25rem 1.5rem;
     }
     .product-info h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
       font-weight: 400;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
     .product-meta {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--gray);
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.85rem;
       line-height: 1.4;
     }
     .product-price {
       font-size: 1.15rem;
       color: var(--pale-blue);
-      margin-bottom: 1.1rem;
-      font-weight: 400;
+      margin-bottom: 1rem;
     }
     .btn-buy {
-      display: inline-block;
+      display: block;
       width: 100%;
       text-align: center;
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem;
       border: 1px solid var(--pale-blue);
       color: var(--pale-blue);
       font-size: 0.8rem;
@@ -85,7 +104,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">Merry Harpin</a>
@@ -102,7 +120,6 @@
     </div>
   </nav>
 
-  <!-- Shop Hero -->
   <header class="shop-hero">
     <div class="container">
       <h1>Shop</h1>
@@ -110,14 +127,13 @@
     </div>
   </header>
 
-  <!-- Products -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
       <div class="shop-grid">
 
         <!-- 1. Bedroom in Forestdale -->
         <article class="product-card">
-          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale">
+          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale" class="product-main-img" id="main-1">
           <div class="product-info">
             <h3>Bedroom in Forestdale</h3>
             <p class="product-meta">Charcoal on newsprint</p>
@@ -128,7 +144,11 @@
 
         <!-- 2. People Watching -->
         <article class="product-card">
-          <img src="images/IMG_1207.jpg" alt="People Watching">
+          <img src="images/IMG_1207.jpg" alt="People Watching" class="product-main-img" id="main-2">
+          <div class="product-thumbs">
+            <img src="images/IMG_1207.jpg" alt="" onclick="swapImage('main-2', this)" class="active">
+            <img src="images/IMG_1206.jpg" alt="" onclick="swapImage('main-2', this)">
+          </div>
           <div class="product-info">
             <h3>People Watching</h3>
             <p class="product-meta">11 × 18 · Charcoal, chalk pastel, oil pastel</p>
@@ -139,7 +159,13 @@
 
         <!-- 3. Cups -->
         <article class="product-card">
-          <img src="images/IMG_1176.JPG" alt="Cups">
+          <img src="images/IMG_1176.JPG" alt="Cups" class="product-main-img" id="main-3">
+          <div class="product-thumbs">
+            <img src="images/IMG_1176.JPG" alt="" onclick="swapImage('main-3', this)" class="active">
+            <img src="images/IMG_1177.JPG" alt="" onclick="swapImage('main-3', this)">
+            <img src="images/IMG_1178.JPG" alt="" onclick="swapImage('main-3', this)">
+            <img src="images/IMG_1179.JPG" alt="" onclick="swapImage('main-3', this)">
+          </div>
           <div class="product-info">
             <h3>Cups</h3>
             <p class="product-meta">18 × 24 · Charcoal on newsprint · August 2026</p>
@@ -150,7 +176,15 @@
 
         <!-- 4. Horse for U -->
         <article class="product-card">
-          <img src="images/IMG_1188.JPG" alt="Horse for U">
+          <img src="images/IMG_1188.JPG" alt="Horse for U" class="product-main-img" id="main-4">
+          <div class="product-thumbs">
+            <img src="images/IMG_1188.JPG" alt="" onclick="swapImage('main-4', this)" class="active">
+            <img src="images/IMG_1189.JPG" alt="" onclick="swapImage('main-4', this)">
+            <img src="images/IMG_1190.jpg" alt="" onclick="swapImage('main-4', this)">
+            <img src="images/IMG_1192.JPG" alt="" onclick="swapImage('main-4', this)">
+            <img src="images/IMG_1193.JPG" alt="" onclick="swapImage('main-4', this)">
+            <img src="images/IMG_1194.JPG" alt="" onclick="swapImage('main-4', this)">
+          </div>
           <div class="product-info">
             <h3>Horse for U</h3>
             <p class="product-meta">9 × 14¼ · Charcoal on newsprint</p>
@@ -161,7 +195,12 @@
 
         <!-- 5. Cedar Waxwing -->
         <article class="product-card">
-          <img src="images/IMG_1197.JPG" alt="Cedar Waxwing">
+          <img src="images/IMG_1197.JPG" alt="Cedar Waxwing" class="product-main-img" id="main-5">
+          <div class="product-thumbs">
+            <img src="images/IMG_1197.JPG" alt="" onclick="swapImage('main-5', this)" class="active">
+            <img src="images/IMG_1198.JPG" alt="" onclick="swapImage('main-5', this)">
+            <img src="images/IMG_1199.JPG" alt="" onclick="swapImage('main-5', this)">
+          </div>
           <div class="product-info">
             <h3>Cedar Waxwing</h3>
             <p class="product-meta">18 × 24 · Charcoal, graphite & chalk pastel</p>
@@ -174,7 +213,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>© <span id="year"></span> Merry Harpin. All rights reserved.</p>
@@ -187,18 +225,25 @@
 
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
     });
-
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         toggle.classList.remove('active');
       });
     });
+
+    function swapImage(mainId, thumb) {
+      const main = document.getElementById(mainId);
+      main.src = thumb.src;
+      // update active state
+      const thumbs = thumb.parentElement.querySelectorAll('img');
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
   </script>
 </body>
 </html>
