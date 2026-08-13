@@ -26,8 +26,8 @@
     }
     .shop-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 3rem;
       padding-bottom: 5rem;
     }
     .product-card {
@@ -40,20 +40,21 @@
     }
     .product-main-img {
       width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
       background: #111;
+      display: block;
+      cursor: pointer;
     }
     .product-thumbs {
       display: flex;
       gap: 0.4rem;
-      padding: 0.6rem 0.75rem 0;
+      padding: 0.7rem 0.9rem 0;
       overflow-x: auto;
     }
     .product-thumbs img {
-      width: 52px;
-      height: 65px;
+      width: 58px;
+      height: 72px;
       object-fit: cover;
       cursor: pointer;
       border: 1px solid transparent;
@@ -66,30 +67,30 @@
       border-color: var(--pale-blue);
     }
     .product-info {
-      padding: 1.1rem 1.25rem 1.5rem;
+      padding: 1.2rem 1.4rem 1.6rem;
     }
     .product-info h3 {
       font-family: var(--font-serif);
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 400;
       margin-bottom: 0.3rem;
     }
     .product-meta {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--gray);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.9rem;
       line-height: 1.4;
     }
     .product-price {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: var(--pale-blue);
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .btn-buy {
       display: block;
       width: 100%;
       text-align: center;
-      padding: 0.85rem;
+      padding: 0.9rem;
       border: 1px solid var(--pale-blue);
       color: var(--pale-blue);
       font-size: 0.8rem;
@@ -100,6 +101,36 @@
     .btn-buy:hover {
       background: var(--pale-blue);
       color: var(--black);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
   </style>
 </head>
@@ -133,7 +164,7 @@
 
         <!-- 1. Bedroom in Forestdale -->
         <article class="product-card">
-          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale" class="product-main-img" id="main-1">
+          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale" class="product-main-img" id="main-1" onclick="openLightbox(this.src)">
           <div class="product-info">
             <h3>Bedroom in Forestdale</h3>
             <p class="product-meta">Charcoal on newsprint</p>
@@ -144,7 +175,7 @@
 
         <!-- 2. People Watching -->
         <article class="product-card">
-          <img src="images/IMG_1207.jpg" alt="People Watching" class="product-main-img" id="main-2">
+          <img src="images/IMG_1207.jpg" alt="People Watching" class="product-main-img" id="main-2" onclick="openLightbox(this.src)">
           <div class="product-thumbs">
             <img src="images/IMG_1207.jpg" alt="" onclick="swapImage('main-2', this)" class="active">
             <img src="images/IMG_1206.jpg" alt="" onclick="swapImage('main-2', this)">
@@ -159,7 +190,7 @@
 
         <!-- 3. Cups -->
         <article class="product-card">
-          <img src="images/IMG_1176.JPG" alt="Cups" class="product-main-img" id="main-3">
+          <img src="images/IMG_1176.JPG" alt="Cups" class="product-main-img" id="main-3" onclick="openLightbox(this.src)">
           <div class="product-thumbs">
             <img src="images/IMG_1176.JPG" alt="" onclick="swapImage('main-3', this)" class="active">
             <img src="images/IMG_1177.JPG" alt="" onclick="swapImage('main-3', this)">
@@ -176,7 +207,7 @@
 
         <!-- 4. Horse for U -->
         <article class="product-card">
-          <img src="images/IMG_1188.JPG" alt="Horse for U" class="product-main-img" id="main-4">
+          <img src="images/IMG_1188.JPG" alt="Horse for U" class="product-main-img" id="main-4" onclick="openLightbox(this.src)">
           <div class="product-thumbs">
             <img src="images/IMG_1188.JPG" alt="" onclick="swapImage('main-4', this)" class="active">
             <img src="images/IMG_1189.JPG" alt="" onclick="swapImage('main-4', this)">
@@ -195,7 +226,7 @@
 
         <!-- 5. Cedar Waxwing -->
         <article class="product-card">
-          <img src="images/IMG_1197.JPG" alt="Cedar Waxwing" class="product-main-img" id="main-5">
+          <img src="images/IMG_1197.JPG" alt="Cedar Waxwing" class="product-main-img" id="main-5" onclick="openLightbox(this.src)">
           <div class="product-thumbs">
             <img src="images/IMG_1197.JPG" alt="" onclick="swapImage('main-5', this)" class="active">
             <img src="images/IMG_1198.JPG" alt="" onclick="swapImage('main-5', this)">
@@ -212,6 +243,12 @@
       </div>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -243,8 +280,15 @@
       thumbs.forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
     }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
   </script>
 </body>
 </html>
-
-    
