@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Merry Harpin</title>
+  <meta name="description" content="Original drawings by Merry Harpin — available for purchase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Extra styles just for the shop */
+    .shop-hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+    }
+    .shop-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .shop-hero p {
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding-bottom: 5rem;
+    }
+    .product-card {
+      background: var(--black-soft);
+      border: 1px solid rgba(168, 197, 212, 0.12);
+      transition: border-color 0.3s ease;
+    }
+    .product-card:hover {
+      border-color: var(--pale-blue);
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+    .product-info {
+      padding: 1.4rem 1.25rem 1.6rem;
+    }
+    .product-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+    }
+    .product-meta {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0.9rem;
+      line-height: 1.4;
+    }
+    .product-price {
+      font-size: 1.15rem;
+      color: var(--pale-blue);
+      margin-bottom: 1.1rem;
+      font-weight: 400;
+    }
+    .btn-buy {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      border: 1px solid var(--pale-blue);
+      color: var(--pale-blue);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .btn-buy:hover {
+      background: var(--pale-blue);
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Merry Harpin</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Shop Hero -->
+  <header class="shop-hero">
+    <div class="container">
+      <h1>Shop</h1>
+      <p>Original drawings available for purchase</p>
+    </div>
+  </header>
+
+  <!-- Products -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="shop-grid">
+
+        <!-- 1. Bedroom in Forestdale -->
+        <article class="product-card">
+          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale">
+          <div class="product-info">
+            <h3>Bedroom in Forestdale</h3>
+            <p class="product-meta">Charcoal on newsprint</p>
+            <p class="product-price">$50</p>
+            <a href="#" class="btn-buy">Buy</a>
+          </div>
+        </article>
+
+        <!-- 2. People Watching -->
+        <article class="product-card">
+          <img src="images/IMG_1207.jpg" alt="People Watching">
+          <div class="product-info">
+            <h3>People Watching</h3>
+            <p class="product-meta">11 × 18 · Charcoal, chalk pastel, oil pastel</p>
+            <p class="product-price">$75</p>
+            <a href="#" class="btn-buy">Buy</a>
+          </div>
+        </article>
+
+        <!-- 3. Cups -->
+        <article class="product-card">
+          <img src="images/IMG_1176.JPG" alt="Cups">
+          <div class="product-info">
+            <h3>Cups</h3>
+            <p class="product-meta">18 × 24 · Charcoal on newsprint · August 2026</p>
+            <p class="product-price">$50</p>
+            <a href="#" class="btn-buy">Buy</a>
+          </div>
+        </article>
+
+        <!-- 4. Horse for U -->
+        <article class="product-card">
+          <img src="images/IMG_1188.JPG" alt="Horse for U">
+          <div class="product-info">
+            <h3>Horse for U</h3>
+            <p class="product-meta">9 × 14¼ · Charcoal on newsprint</p>
+            <p class="product-price">$45</p>
+            <a href="#" class="btn-buy">Buy</a>
+          </div>
+        </article>
+
+        <!-- 5. Cedar Waxwing -->
+        <article class="product-card">
+          <img src="images/IMG_1197.JPG" alt="Cedar Waxwing">
+          <div class="product-info">
+            <h3>Cedar Waxwing</h3>
+            <p class="product-meta">18 × 24 · Charcoal, graphite & chalk pastel</p>
+            <p class="product-price">$65</p>
+            <a href="#" class="btn-buy">Buy</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Merry Harpin. All rights reserved.</p>
+      <p class="footer-note">A pupil of Beauty</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
