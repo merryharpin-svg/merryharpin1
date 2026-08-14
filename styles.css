@@ -80,6 +80,7 @@ ul {
 }
 
 .nav-inner {
+ .nav-inner {
   width: 90%;
   max-width: var(--container-max);
   margin: 0 auto;
