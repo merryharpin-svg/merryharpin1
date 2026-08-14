@@ -460,6 +460,16 @@ ul {
     gap: 2.5rem;
   }
 
+  .about-photo {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-photo img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
