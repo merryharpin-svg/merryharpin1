@@ -44,4 +44,127 @@
   <section id="about" class="section about">
     <div class="container">
       <div class="section-header">
-        <span class="section-
+        <span class="section-number">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead">
+            Merry Harpin is a self-taught artist living and working in Norwich, Connecticut, though she spent her early years along the Mississippi Gulf Coast. Her studio practice centers on the rich textures of charcoal, while she continues to explore oils, watercolors, and acrylics.
+          </p>
+          <p>
+            Her work seeks the sacred in the everyday, guided by beauty, truth, and goodness. For her, recognizing beauty is not simply a matter of preference, but an intentional act of attention. When she is not in the studio, she nurtures this focus in nature—her greatest teacher and mentor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="section work">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Work</h2>
+      </div>
+      <div class="portfolio-grid">
+
+        <article class="portfolio-item">
+          <img src="images/hand-study.jpeg" alt="My Hand">
+          <div class="portfolio-info">
+            <h3>My Hand</h3>
+            <p>Charcoal & Graphite · 2026</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0604 2.png" alt="Chair in Massachusetts">
+          <div class="portfolio-info">
+            <h3>Chair in Massachusetts</h3>
+            <p>Charcoal on newsprint · May 2026</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale, MA">
+          <div class="portfolio-info">
+            <h3>Bedroom in Forestdale, MA</h3>
+            <p>Charcoal · July 2026</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1176.JPG" alt="Cups">
+          <div class="portfolio-info">
+            <h3>Cups</h3>
+            <p>Charcoal on newsprint · 2026</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1186.JPG" alt="My Living Room">
+          <div class="portfolio-info">
+            <h3>My Living Room</h3>
+            <p>Charcoal on newsprint · 2026</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1210.JPG" alt="Merry and the Bay Bridge">
+          <div class="portfolio-info">
+            <h3>Merry and the Bay Bridge</h3>
+            <p>Charcoal on newsprint · 2026</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-content">
+        <p class="lead">Inquiries, commissions, or to say hello.</p>
+        <div class="contact-details">
+          <a href="mailto:merryharpin@gmail.com" class="contact-link">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">merryharpin@gmail.com</span>
+          </a>
+          <a href="https://instagram.com/merryharpin" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@merryharpin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Merry Harpin. All rights reserved.</p>
+      <p class="footer-note">A pupil of Beauty</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
