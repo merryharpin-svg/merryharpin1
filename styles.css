@@ -259,7 +259,12 @@ ul {
   gap: 4rem;
   align-items: start;
 }
-
+.about-photo img {
+  width: 100%;
+  max-width: 340px;
+  display: block;
+  border: 1px solid rgba(168, 197, 212, 0.15);
+}
 .lead {
   font-family: var(--font-serif);
   font-size: 1.45rem;
