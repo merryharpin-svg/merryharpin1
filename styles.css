@@ -78,9 +78,7 @@ ul {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(168, 197, 212, 0.12);
 }
-
 .nav-inner {
- .nav-inner {
   width: 90%;
   max-width: var(--container-max);
   margin: 0 auto;
@@ -89,7 +87,6 @@ ul {
   justify-content: space-between;
   height: 70px;
 }
-
 .logo {
   font-family: var(--font-serif);
   font-size: 1.35rem;
