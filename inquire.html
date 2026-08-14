@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquire | Merry Harpin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .inquire-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem;
+    }
+    .inquire-card {
+      background: var(--black-soft);
+      border: 1px solid rgba(168, 197, 212, 0.15);
+      padding: 2.5rem;
+      max-width: 480px;
+      width: 100%;
+    }
+    .inquire-card h1 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .inquire-card .piece-name {
+      color: var(--pale-blue);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .inquire-card label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pale-blue-muted);
+      margin-bottom: 0.4rem;
+    }
+    .inquire-card input,
+    .inquire-card textarea {
+      width: 100%;
+      background: #111;
+      border: 1px solid rgba(168, 197, 212, 0.2);
+      color: var(--white);
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+    }
+    .inquire-card textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .inquire-card button {
+      width: 100%;
+      padding: 0.95rem;
+      background: transparent;
+      border: 1px solid var(--pale-blue);
+      color: var(--pale-blue);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .inquire-card button:hover {
+      background: var(--pale-blue);
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Merry Harpin</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="inquire-section">
+    <div class="inquire-card">
+      <h1>Inquire</h1>
+      <p class="piece-name" id="piece-title">About this piece</p>
+
+      <form action="https://formspree.io/f/xljrlara" method="POST">
+        <input type="hidden" name="piece" id="piece-field" value="">
+        
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" required>Hi Merry, I'm interested in this piece.</textarea>
+
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Get the piece name from the URL
+    const params = new URLSearchParams(window.location.search);
+    const piece = params.get('piece') || 'this piece';
+    document.getElementById('piece-title').textContent = piece;
+    document.getElementById('piece-field').value = piece;
+    document.getElementById('message').value = `Hi Merry, I'm interested in purchasing "${piece}".`;
+
+    // Mobile menu
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
