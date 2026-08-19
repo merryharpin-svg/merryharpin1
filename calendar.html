@@ -296,11 +296,7 @@
             just first access.
           </p>
 
-          <form name="calendar-reserve" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reserve-form" id="reserve-form">
-            <input type="hidden" name="form-name" value="calendar-reserve">
-            <p style="display:none;">
-              <label>Don't fill this out: <input name="bot-field"></label>
-            </p>
+          <form action="https://formspree.io/f/xljrlara" method="POST" class="reserve-form" id="reserve-form">
             <div>
               <label for="rf-name">Name</label>
               <input type="text" id="rf-name" name="name" required>
@@ -313,6 +309,7 @@
               <label for="rf-qty">How many are you interested in? (optional)</label>
               <input type="number" id="rf-qty" name="quantity" min="1">
             </div>
+            <input type="hidden" name="_subject" value="New Bird Calendar reserve-list signup">
             <button type="submit" class="btn-reserve">Reserve my calendar</button>
             <p class="reserve-note">I'll only email you about the calendar, nothing else.</p>
           </form>
@@ -381,22 +378,26 @@
       document.getElementById('lightbox').classList.remove('active');
     }
 
-    /* Submit the reserve form to Netlify via fetch so the visitor
+    /* Submit the reserve form to Formspree via fetch so the visitor
        stays on the page and sees a thank-you message. */
     const form = document.getElementById('reserve-form');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(form);
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        body: data,
+        headers: { 'Accept': 'application/json' }
       })
-      .then(() => {
-        form.style.display = 'none';
-        document.getElementById('reserve-success').classList.add('show');
+      .then((response) => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('reserve-success').classList.add('show');
+        } else {
+          alert('Something went wrong — please try again.');
+        }
       })
-      .catch((error) => alert('Something went wrong — please try again. ' + error));
+      .catch(() => alert('Something went wrong — please try again.'));
     });
   </script>
 </body>
