@@ -1,1 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2RK9Q93P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2RK9Q93P8');
+  </script>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bird Calendar 2027–2028 | Merry Harpin</title>
+  <meta name="description" content="Reserve the 2027–2028 Bird Calendar — twelve original charcoal bird drawings by Merry Harpin, one for every month.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cal-hero {
+      padding: 8rem 0 2.5rem;
+      text-align: center;
+    }
+    .cal-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+    }
+    .cal-hero p {
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    .cal-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding-bottom: 5rem;
+    }
+
+    .cal-feature-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      background: #111;
+      display: block;
+      cursor: pointer;
+      border: 1px solid rgba(168, 197, 212, 0.12);
+    }
+
+    .cal-body {
+      background: var(--black-soft);
+      border: 1px solid rgba(168, 197, 212, 0.12);
+      border-top: none;
+      padding: 2rem 1.8rem 2.2rem;
+    }
+    .cal-body h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.9rem;
+      text-align: center;
+    }
+    .cal-body p.lead {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      text-align: center;
+    }
+
+    .reserve-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .reserve-form label {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.45rem;
+    }
+    .reserve-form input {
+      width: 100%;
+      box-sizing: border-box;
+      background: #111;
+      border: 1px solid rgba(168, 197, 212, 0.2);
+      color: inherit;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      padding: 0.85rem 0.9rem;
+      transition: border-color 0.3s ease;
+    }
+    .reserve-form input:focus {
+      outline: none;
+      border-color: var(--pale-blue);
+    }
+    .btn-reserve {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.95rem;
+      margin-top: 0.4rem;
+      background: none;
+      border: 1px solid var(--pale-blue);
+      color: var(--pale-blue);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-reserve:hover {
+      background: var(--pale-blue);
+      color: var(--black);
+    }
+    .reserve-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      text-align: center;
+      margin-top: 0.3rem;
+      line-height: 1.5;
+    }
+
+    .reserve-success {
+      display: none;
+      text-align: center;
+      padding: 1rem 0 0.5rem;
+    }
+    .reserve-success.show { display: block; }
+    .reserve-success p {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--pale-blue);
+    }
+
+    /* Shop dropdown */
+    .has-dropdown { position: relative; }
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--gray);
+      transition: color 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .dropdown-toggle:hover,
+    .has-dropdown:hover .dropdown-toggle { color: var(--pale-blue); }
+    .dropdown-toggle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.25s ease;
+      margin-top: -3px;
+    }
+    .has-dropdown.open .dropdown-toggle::after {
+      transform: rotate(-135deg);
+      margin-top: 2px;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(168, 197, 212, 0.12);
+      padding: 0.6rem 0;
+      min-width: 210px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .has-dropdown:hover .dropdown-menu,
+    .has-dropdown.open .dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      padding: 0.65rem 1.4rem;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      color: var(--gray);
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+    .dropdown-menu a:hover {
+      color: var(--pale-blue);
+      background: rgba(168, 197, 212, 0.06);
+    }
+    @media (max-width: 680px) {
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        padding: 0.75rem 0 0;
+        min-width: 0;
+        align-items: center;
+        gap: 1rem;
+      }
+      .dropdown-toggle::after { display: none; }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Merry Harpin</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
+          <div class="dropdown-menu">
+            <a href="shop.html">Original Drawings</a>
+            <a href="calendar.html">Bird Calendar 2027–2028</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="cal-hero">
+    <div class="container">
+      <h1>Bird Calendar 2027–2028</h1>
+      <p>Twelve original charcoal birds — one for every month</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cal-wrap">
+
+        <img src="images/IMG_1197.JPG" alt="Original charcoal bird drawing from the 2027–2028 calendar" class="cal-feature-img" onclick="openLightbox(this.src)">
+
+        <div class="cal-body">
+          <h2>Reserve yours</h2>
+          <p class="lead">
+            A year of original charcoal birds — twelve hand-drawn studies, one for every month.
+            The calendars are being drawn now and will be ready soon. Join the reserve list and
+            I'll email you the moment they're available, before they go public. No payment now —
+            just first access.
+          </p>
+
+          <form name="calendar-reserve" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reserve-form" id="reserve-form">
+            <input type="hidden" name="form-name" value="calendar-reserve">
+            <p style="display:none;">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
+            <div>
+              <label for="rf-name">Name</label>
+              <input type="text" id="rf-name" name="name" required>
+            </div>
+            <div>
+              <label for="rf-email">Email</label>
+              <input type="email" id="rf-email" name="email" required>
+            </div>
+            <div>
+              <label for="rf-qty">How many are you interested in? (optional)</label>
+              <input type="number" id="rf-qty" name="quantity" min="1">
+            </div>
+            <button type="submit" class="btn-reserve">Reserve my calendar</button>
+            <p class="reserve-note">I'll only email you about the calendar, nothing else.</p>
+          </form>
+
+          <div class="reserve-success" id="reserve-success">
+            <p>Thank you — you're on the list.</p>
+            <p class="reserve-note">I'll be in touch as soon as the calendars are ready.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Merry Harpin. All rights reserved.</p>
+      <p class="footer-note">A pupil of Beauty</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    const dropdown = document.querySelector('.has-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        dropdownToggle.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    /* Submit the reserve form to Netlify via fetch so the visitor
+       stays on the page and sees a thank-you message. */
+    const form = document.getElementById('reserve-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        form.style.display = 'none';
+        document.getElementById('reserve-success').classList.add('show');
+      })
+      .catch((error) => alert('Something went wrong — please try again. ' + error));
+    });
+  </script>
+</body>
+</html>
