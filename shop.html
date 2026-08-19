@@ -11,10 +11,8 @@
   </script>
 
   <meta charset="UTF-8">
-  ...
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop | Merry Harpin</title>
+  <title>Original Drawings | Merry Harpin</title>
   <meta name="description" content="Original drawings by Merry Harpin — available for purchase.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +112,88 @@
       color: var(--black);
     }
 
+    /* Shop dropdown */
+    .has-dropdown { position: relative; }
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--gray);
+      transition: color 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .dropdown-toggle:hover,
+    .has-dropdown:hover .dropdown-toggle { color: var(--pale-blue); }
+    .dropdown-toggle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.25s ease;
+      margin-top: -3px;
+    }
+    .has-dropdown.open .dropdown-toggle::after {
+      transform: rotate(-135deg);
+      margin-top: 2px;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(168, 197, 212, 0.12);
+      padding: 0.6rem 0;
+      min-width: 210px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .has-dropdown:hover .dropdown-menu,
+    .has-dropdown.open .dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      padding: 0.65rem 1.4rem;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      color: var(--gray);
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+    .dropdown-menu a:hover {
+      color: var(--pale-blue);
+      background: rgba(168, 197, 212, 0.06);
+    }
+    @media (max-width: 680px) {
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        padding: 0.75rem 0 0;
+        min-width: 0;
+        align-items: center;
+        gap: 1rem;
+      }
+      .dropdown-toggle::after { display: none; }
+    }
+
     /* Lightbox */
     .lightbox {
       display: none;
@@ -150,17 +230,17 @@
     <div class="nav-inner">
       <a href="index.html" class="logo">Merry Harpin</a>
       <ul class="nav-links">
-  <li><a href="index.html#about">About</a></li>
-  <li><a href="index.html#work">Work</a></li>
-  <li class="has-dropdown">
-    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
-    <div class="dropdown-menu">
-      <a href="shop.html">Original Drawings</a>
-      <a href="calendar.html">Bird Calendar 2027–2028</a>
-    </div>
-  </li>
-  <li><a href="index.html#contact">Contact</a></li>
-</ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
+          <div class="dropdown-menu">
+            <a href="shop.html">Original Drawings</a>
+            <a href="calendar.html">Bird Calendar 2027–2028</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -170,7 +250,7 @@
 
   <header class="shop-hero">
     <div class="container">
-      <h1>Shop</h1>
+      <h1>Original Drawings</h1>
       <p>Original drawings available for purchase</p>
     </div>
   </header>
@@ -186,7 +266,7 @@
             <h3>Bedroom in Forestdale</h3>
             <p class="product-meta">Charcoal on newsprint</p>
             <p class="product-price">$50</p>
-<a href="inquire.html?piece=Bedroom%20in%20Forestdale" class="btn-buy">Inquire</a>
+            <a href="inquire.html?piece=Bedroom%20in%20Forestdale" class="btn-buy">Inquire</a>
           </div>
         </article>
 
@@ -201,7 +281,7 @@
             <h3>People Watching</h3>
             <p class="product-meta">11 × 18 · Charcoal, chalk pastel, oil pastel</p>
             <p class="product-price">$75</p>
-           <a href="inquire.html?piece=People%20Watching" class="btn-buy">Inquire</a>
+            <a href="inquire.html?piece=People%20Watching" class="btn-buy">Inquire</a>
           </div>
         </article>
 
@@ -218,7 +298,7 @@
             <h3>Cups</h3>
             <p class="product-meta">18 × 24 · Charcoal on newsprint · August 2026</p>
             <p class="product-price">$50</p>
-           <a href="inquire.html?piece=Cups" class="btn-buy">Inquire</a>
+            <a href="inquire.html?piece=Cups" class="btn-buy">Inquire</a>
           </div>
         </article>
 
@@ -253,19 +333,21 @@
             <h3>Cedar Waxwing</h3>
             <p class="product-meta">18 × 24 · Charcoal, graphite & chalk pastel</p>
             <p class="product-price">$65</p>
-           <a href="inquire.html?piece=Cedar%20Waxwing" class="btn-buy">Inquire</a>
+            <a href="inquire.html?piece=Cedar%20Waxwing" class="btn-buy">Inquire</a>
           </div>
         </article>
-<!-- 6. Merry and the Bay Bridge -->
-<article class="product-card">
-  <img src="images/IMG_1210.JPG" alt="Merry and the Bay Bridge" class="product-main-img" id="main-6" onclick="openLightbox(this.src)">
-  <div class="product-info">
-    <h3>Merry and the Bay Bridge</h3>
-    <p class="product-meta">18 × 24 · Charcoal on newsprint · 2026</p>
-    <p class="product-price">$45</p>
-   <a href="inquire.html?piece=Merry%20and%20the%20Bay%20Bridge" class="btn-buy">Inquire</a>
-  </div>
-</article>
+
+        <!-- 6. Merry and the Bay Bridge -->
+        <article class="product-card">
+          <img src="images/IMG_1210.JPG" alt="Merry and the Bay Bridge" class="product-main-img" id="main-6" onclick="openLightbox(this.src)">
+          <div class="product-info">
+            <h3>Merry and the Bay Bridge</h3>
+            <p class="product-meta">18 × 24 · Charcoal on newsprint · 2026</p>
+            <p class="product-price">$45</p>
+            <a href="inquire.html?piece=Merry%20and%20the%20Bay%20Bridge" class="btn-buy">Inquire</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -292,6 +374,23 @@
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
     });
+
+    const dropdown = document.querySelector('.has-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        dropdownToggle.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
