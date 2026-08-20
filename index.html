@@ -22,6 +22,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hover-to-see-detail image set (used for multi-view pieces) */
+    .art-set { position: relative; display: block; overflow: hidden; }
+    .art-set > img { display: block; width: 100%; }
+    .art-set .art-layer {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; transition: opacity .6s ease;
+    }
+    .art-badge {
+      position: absolute; top: 10px; right: 10px;
+      font-family: 'Outfit', sans-serif; font-size: .68rem; letter-spacing: .06em;
+      text-transform: uppercase; color: #fff; background: rgba(10,10,10,.55);
+      padding: 4px 9px; border-radius: 2px; opacity: 0;
+      transition: opacity .4s ease; pointer-events: none;
+    }
+    .art-set:hover .art-badge { opacity: 1; }
+    @media (hover: hover) {
+      /* Multi-detail tiles cycle through two detail views */
+      .art-set--cycle:hover .art-layer-1 { animation: artFade1 7s ease-in-out infinite; }
+      .art-set--cycle:hover .art-layer-2 { animation: artFade2 7s ease-in-out infinite; }
+      /* Single-detail tiles fade to the detail and hold while hovered */
+      .art-set--single:hover .art-layer-1 { opacity: 1; }
+    }
+    @keyframes artFade1 {
+      0%, 14% { opacity: 0; } 22%, 44% { opacity: 1; } 52%, 100% { opacity: 0; }
+    }
+    @keyframes artFade2 {
+      0%, 52% { opacity: 0; } 60%, 84% { opacity: 1; } 92%, 100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -97,7 +127,7 @@
           </div>
         </article>
         <article class="portfolio-item">
-          <img src="images/IMG_0604-2.png" alt="Chair in Massachusetts">
+          <img src="images/chair-in-massachusetts.jpg" alt="Chair in Massachusetts">
           <div class="portfolio-info">
             <h3>Chair in Massachusetts</h3>
             <p>Charcoal on newsprint · May 2026</p>
@@ -171,6 +201,50 @@
           <div class="portfolio-info">
             <h3>Head and Shoulders</h3>
             <p>Charcoal · 2026</p>
+          </div>
+        </article>
+        <article class="portfolio-item">
+          <div class="art-set art-set--cycle" aria-label="Double-crested Cormorant, with detail views on hover">
+            <img src="images/IMG_1517.jpg" alt="Double-crested Cormorant">
+            <img src="images/IMG_1485.jpg" alt="Double-crested Cormorant, head detail" class="art-layer art-layer-1">
+            <img src="images/IMG_1482.jpg" alt="Double-crested Cormorant, eye detail" class="art-layer art-layer-2">
+            <span class="art-badge" aria-hidden="true">＋ detail</span>
+          </div>
+          <div class="portfolio-info">
+            <h3>Double-crested Cormorant</h3>
+            <p>Charcoal, chalk pastel · 2026</p>
+          </div>
+        </article>
+        <article class="portfolio-item">
+          <div class="art-set art-set--single" aria-label="Hooded Merganser, with a detail view on hover">
+            <img src="images/IMG_1662.jpg" alt="Hooded Merganser">
+            <img src="images/IMG_1660.jpg" alt="Hooded Merganser, detail" class="art-layer art-layer-1">
+            <span class="art-badge" aria-hidden="true">＋ detail</span>
+          </div>
+          <div class="portfolio-info">
+            <h3>Hooded Merganser</h3>
+            <p>Charcoal · 2026</p>
+          </div>
+        </article>
+        <article class="portfolio-item">
+          <img src="images/IMG_1437_2.jpg" alt="Me posing for Me">
+          <div class="portfolio-info">
+            <h3>Me posing for Me</h3>
+            <p>Charcoal · 2026</p>
+          </div>
+        </article>
+        <article class="portfolio-item">
+          <img src="images/IMG_1972.jpg" alt="Me posing for Me">
+          <div class="portfolio-info">
+            <h3>Me posing for Me</h3>
+            <p>Graphite · 2026</p>
+          </div>
+        </article>
+        <article class="portfolio-item">
+          <img src="images/IMG_9840.jpg" alt="Drawing for Mom">
+          <div class="portfolio-info">
+            <h3>Drawing for Mom</h3>
+            <p>Charcoal & pastel · 2026</p>
           </div>
         </article>
       </div>
