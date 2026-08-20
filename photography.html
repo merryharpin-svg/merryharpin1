@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2RK9Q93P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2RK9Q93P8');
+  </script>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography | Merry Harpin</title>
+  <meta name="description" content="Photography by Merry Harpin.">
+  <meta property="og:title" content="Photography | Merry Harpin">
+  <meta property="og:description" content="Photography by Merry Harpin.">
+  <meta property="og:url" content="https://merryharpin.com/photography.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Merry Harpin</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
+          <div class="dropdown-menu">
+            <a href="shop.html">Original Drawings</a>
+            <a href="calendar.html">Bird Calendar 2027&ndash;2028</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Photography -->
+  <section id="photography" class="section work">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Photography</h2>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1024.JPG" alt="Female Red-Winged Blackbird, Norwich, CT">
+          <div class="portfolio-info">
+            <h3>Female Red-Winged Blackbird</h3>
+            <p>Norwich, CT</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0987.JPG" alt="Purple Martin in flight, Ledyard, CT">
+          <div class="portfolio-info">
+            <h3>Purple Martin in Flight</h3>
+            <p>Ledyard, CT</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0923.JPG" alt="Hummer in flight, Vallejo, CA">
+          <div class="portfolio-info">
+            <h3>Hummer in Flight</h3>
+            <p>Vallejo, CA</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0918.JPG" alt="Hummer perched, Vallejo, CA">
+          <div class="portfolio-info">
+            <h3>Hummer Perched</h3>
+            <p>Vallejo, CA</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0898.JPG" alt="Hummer landing, Vallejo, CA">
+          <div class="portfolio-info">
+            <h3>Hummer Landing</h3>
+            <p>Vallejo, CA</p>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_1161_2.JPG" alt="Gold and Silver">
+          <div class="portfolio-info">
+            <h3>Gold and Silver</h3>
+          </div>
+        </article>
+
+        <article class="portfolio-item">
+          <img src="images/IMG_0937.JPG" alt="Allen's Hummingbird, Vallejo, CA">
+          <div class="portfolio-info">
+            <h3>Allen's Hummingbird</h3>
+            <p>Vallejo, CA</p>
+          </div>
+        </article>
+
+        <!-- To add another photo, copy the block below, then set the filename and title.
+        <article class="portfolio-item">
+          <img src="images/YOUR_FILENAME.JPG" alt="Title of the photo">
+          <div class="portfolio-info">
+            <h3>Title of the photo</h3>
+            <p>Location or date</p>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Merry Harpin. All rights reserved.</p>
+      <p class="footer-note">A pupil of Beauty</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    const dropdown = document.querySelector('.has-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        dropdownToggle.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
