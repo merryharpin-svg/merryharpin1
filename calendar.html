@@ -40,21 +40,48 @@
       padding-bottom: 5rem;
     }
 
-    .cal-feature-img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: contain;
-      background: #111;
+    /* ---- Wire-bound calendar mockup ---- */
+    .wire-cal {
+      position: relative;
+      max-width: 540px;
+      margin: 0 auto;
+      padding-top: 14px;
+    }
+    .wire-cal + .wire-cal { margin-top: 3rem; }
+    .wire-cal-paper {
+      position: relative;
+      background: #fbfaf7;
+      box-shadow: 0 30px 65px rgba(0, 0, 0, 0.55);
+      padding: 30px 22px 26px;
+    }
+    .wire-cal-wire {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 34px;
+      z-index: 3;
+      pointer-events: none;
+      line-height: 0;
+    }
+    .wire-cal-art {
       display: block;
+      width: 100%;
+      height: auto;
       cursor: pointer;
-      border: 1px solid rgba(168, 197, 212, 0.12);
+    }
+
+    .cal-mockup-note {
+      max-width: 540px;
+      margin: 1.1rem auto 0;
+      text-align: center;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--gray);
     }
 
     .cal-body {
       background: var(--black-soft);
       border: 1px solid rgba(168, 197, 212, 0.12);
-      border-top: none;
-      padding: 2rem 1.8rem 2.2rem;
+      padding: 2.2rem 1.8rem 2.4rem;
     }
     .cal-body h2 {
       font-family: var(--font-serif);
@@ -66,8 +93,17 @@
     .cal-body p.lead {
       color: var(--gray);
       line-height: 1.7;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1rem;
       text-align: center;
+    }
+    .reserve-deadline {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pale-blue);
+      margin-bottom: 1.8rem;
     }
 
     .reserve-form {
@@ -277,7 +313,6 @@
   <header class="cal-hero">
     <div class="container">
       <h1>Bird Calendar 2027–2028</h1>
-      <p>Twelve original charcoal birds — one for every month</p>
     </div>
   </header>
 
@@ -285,17 +320,17 @@
     <div class="container">
       <div class="cal-wrap">
 
-        <img src="images/colored-bird-2.jpg" alt="Original cormorant drawing in charcoal, soft pastel, and graphite from the 2027–2028 bird calendar" class="cal-feature-img" onclick="openLightbox(this.src)">
-
         <div class="cal-body">
           <h2>Reserve yours</h2>
           <p class="lead">
-            Twelve original bird drawings — one for every month — plus an original title-page
-            drawing, all hand-rendered in charcoal, soft pastel, and graphite.
-            The calendars are being drawn now and will be ready soon. Join the reserve list and
-            I'll email you the moment they're available, before they go public. No payment now —
-            just first access.
+            Twelve bird drawings, each named — one for every month — plus a title-page
+            drawing, all hand-rendered in charcoal, soft pastel, and graphite. Each
+            calendar is printed on 100% recycled, FSC-certified paper with VOC-free,
+            vegetable-based inks, and wire-bound to hang.
+            The calendars are being drawn now. Join the reserve list and I'll email you
+            when they're ready to purchase — no payment now, just let me know you'd like one.
           </p>
+          <p class="reserve-deadline">Reservations close December 1, 2026.</p>
 
           <form action="https://formspree.io/f/xljrlara" method="POST" class="reserve-form" id="reserve-form">
             <div>
