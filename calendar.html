@@ -313,12 +313,58 @@
   <header class="cal-hero">
     <div class="container">
       <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Birds of New England 2027 — Wall Calendar</h1>
-      <div style="text-align:center;">
-        <img src="images/cover_wall_mockup.jpg"
-             alt="Birds of New England 2027 — Wall Calendar hanging on a wall, a cormorant drawing by Merry Harpin"
-             style="display:block; margin:0 auto; max-width:460px; width:100%; height:auto; border-radius:2px;">
+
+      <div class="gallery">
+        <div class="gallery-thumbs" id="galThumbs">
+          <button class="gthumb is-active" data-full="images/cover_wall_mockup.png" aria-label="Cover">
+            <img src="images/cover_wall_mockup.png" alt="Birds of New England 2027 cover, hanging">
+          </button>
+          <button class="gthumb" data-full="images/august-preview.jpg" aria-label="August">
+            <img src="images/august-preview.jpg" alt="August — Double-crested Cormorant">
+          </button>
+          <!-- Add more month thumbnails here as they're finished:
+          <button class="gthumb" data-full="images/september-preview.jpg" aria-label="September"><img src="images/september-preview.jpg" alt="September"></button>
+          -->
+        </div>
+        <div class="gallery-main">
+          <img id="galMain" src="images/cover_wall_mockup.png" alt="Birds of New England 2027 — Wall Calendar by Merry Harpin">
+        </div>
       </div>
+
+      <p style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+        The cover bird and August are both double-crested cormorants — my favorite bird of all time. I've seen them all summer here, and I visit them on my morning walks at the pond near my house.
+      </p>
     </div>
+
+    <style>
+      .gallery{display:flex;gap:1rem;align-items:flex-start;justify-content:center;max-width:620px;margin:0 auto;}
+      .gallery-thumbs{display:flex;flex-direction:column;gap:.7rem;flex:0 0 auto;}
+      .gthumb{padding:0;background:none;border:1px solid rgba(168,197,212,0.25);border-radius:3px;cursor:pointer;
+        width:64px;height:84px;overflow:hidden;transition:border-color .2s,opacity .2s;opacity:.7;}
+      .gthumb img{width:100%;height:100%;object-fit:cover;display:block;}
+      .gthumb:hover{opacity:1;}
+      .gthumb.is-active{border-color:#a8c5d4;opacity:1;}
+      .gallery-main{flex:1 1 auto;max-width:440px;}
+      .gallery-main img{width:100%;height:auto;display:block;border-radius:2px;}
+      @media(max-width:520px){
+        .gallery{flex-direction:column-reverse;align-items:center;}
+        .gallery-thumbs{flex-direction:row;flex-wrap:wrap;justify-content:center;}
+      }
+    </style>
+    <script>
+      (function(){
+        var main=document.getElementById('galMain');
+        var thumbs=document.querySelectorAll('#galThumbs .gthumb');
+        if(!main||!thumbs.length)return;
+        thumbs.forEach(function(t){
+          t.addEventListener('click',function(){
+            main.src=t.getAttribute('data-full');
+            thumbs.forEach(function(x){x.classList.remove('is-active');});
+            t.classList.add('is-active');
+          });
+        });
+      })();
+    </script>
   </header>
 
   <section class="section" style="padding-top: 0;">
