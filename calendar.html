@@ -383,20 +383,19 @@
           </p>
           <p class="reserve-deadline">Reservations close December 1, 2026.</p>
 
-          <form action="https://formspree.io/f/xljrlara" method="POST" class="reserve-form" id="reserve-form">
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLScjy0My_nxP83XkBmra2AHibmMsdLbwINPcU4W1mPJadVNd4A/formResponse" method="POST" class="reserve-form" id="reserve-form">
             <div>
               <label for="rf-name">Name</label>
-              <input type="text" id="rf-name" name="name" required>
+              <input type="text" id="rf-name" name="entry.1694331332" required>
             </div>
             <div>
               <label for="rf-email">Email</label>
-              <input type="email" id="rf-email" name="email" required>
+              <input type="email" id="rf-email" name="entry.792201869" required>
             </div>
             <div>
               <label for="rf-qty">How many are you interested in? (optional)</label>
-              <input type="number" id="rf-qty" name="quantity" min="1">
+              <input type="number" id="rf-qty" name="entry.1854528746" min="1">
             </div>
-            <input type="hidden" name="_subject" value="New Bird Calendar reserve-list signup">
             <button type="submit" class="btn-reserve">Reserve yours now</button>
             <p class="reserve-note">I'll only email you about the calendar, nothing else.</p>
           </form>
@@ -465,24 +464,21 @@
       document.getElementById('lightbox').classList.remove('active');
     }
 
-    /* Submit the reserve form to Formspree via fetch so the visitor
-       stays on the page and sees a thank-you message. */
+    /* Submit the reserve form to Google Forms via fetch so the visitor
+       stays on the page and sees a thank-you message. Google doesn't
+       send back a readable reply, so the thank-you shows once it's sent. */
     const form = document.getElementById('reserve-form');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(form);
       fetch(form.action, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        mode: 'no-cors',
+        body: data
       })
-      .then((response) => {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('reserve-success').classList.add('show');
-        } else {
-          alert('Something went wrong — please try again.');
-        }
+      .then(() => {
+        form.style.display = 'none';
+        document.getElementById('reserve-success').classList.add('show');
       })
       .catch(() => alert('Something went wrong — please try again.'));
     });
