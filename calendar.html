@@ -319,6 +319,9 @@
           <button class="gthumb is-active" data-full="images/cover_wall_mockup.png" aria-label="Cover">
             <img src="images/cover_wall_mockup.png" alt="Birds of New England 2027 cover, hanging">
           </button>
+          <button class="gthumb" data-full="images/may-preview.jpg" data-note="may" aria-label="May">
+            <img src="images/may-preview.jpg" alt="May — Common Loon">
+          </button>
           <button class="gthumb" data-full="images/august-preview.jpg" aria-label="August">
             <img src="images/august-preview.jpg" alt="August — Double-crested Cormorant">
           </button>
@@ -331,8 +334,11 @@
         </div>
       </div>
 
-      <p style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+      <p class="gal-note" data-note="default" style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
         The cover bird and August are both double-crested cormorants — one of my favorite birds. I've seen them all summer here, and I visit them on my morning walks at the pond near my house.
+      </p>
+      <p class="gal-note" data-note="may" hidden style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+        Loons have always felt like a bird from a story to me. I've never seen one in person. I spent the last seven years in New Orleans, and it turns out many loons spend their winters along that same Gulf Coast, so we may have been closer than I knew. In May they move through Connecticut in their black-and-white breeding feathers, heading north to nest. I hope to finally see one.
       </p>
     </div>
 
@@ -361,6 +367,10 @@
             main.src=t.getAttribute('data-full');
             thumbs.forEach(function(x){x.classList.remove('is-active');});
             t.classList.add('is-active');
+            var key=t.getAttribute('data-note')||'default';
+            document.querySelectorAll('.gal-note').forEach(function(n){
+              n.hidden=(n.getAttribute('data-note')!==key);
+            });
           });
         });
       })();
