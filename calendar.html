@@ -169,6 +169,76 @@
       text-align: center;
       padding: 1rem 0 0.5rem;
     }
+
+    /* Pre-order (Stripe) */
+    .preorder {
+      max-width: 420px;
+      margin: 0.4rem auto 0;
+      text-align: center;
+    }
+    .preorder-price {
+      font-family: var(--font-serif);
+      margin-bottom: 0.3rem;
+    }
+    .preorder-now {
+      font-size: 2.4rem;
+      color: var(--pale-blue);
+    }
+    .preorder-was {
+      font-size: 1.3rem;
+      color: var(--gray);
+      text-decoration: line-through;
+      margin-left: 0.5rem;
+    }
+    .preorder .reserve-deadline { margin-bottom: 1.3rem; }
+    .btn-preorder {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 1.05rem;
+      background: var(--pale-blue);
+      border: 1px solid var(--pale-blue);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-preorder:hover {
+      background: none;
+      color: var(--pale-blue);
+    }
+    .preorder .reserve-note { margin-top: 0.8rem; }
+    .reserve-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 420px;
+      margin: 2.2rem auto 1.2rem;
+      color: var(--gray);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .reserve-divider::before,
+    .reserve-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(168, 197, 212, 0.15);
+    }
+    .reserve-alt {
+      max-width: 420px;
+      margin: 0 auto 1.3rem;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
     .reserve-success.show { display: block; }
     .reserve-success p {
       font-family: var(--font-serif);
@@ -382,16 +452,27 @@
       <div class="cal-wrap">
 
         <div class="cal-body">
-          <h2>Reserve yours</h2>
+          <h2>Pre-order yours</h2>
           <p class="lead">
             Twelve original bird drawings, one for every month, each named — plus a
             title-page drawing — all hand-drawn in charcoal and graphite, with
             oil and soft pastels. Each calendar measures 11 × 16.5 inches, printed with
             soy-free ink and wire-bound to hang.
-            The calendars are being drawn now. Join the reserve list and I'll email you
-            when they're ready to purchase — no payment now.
+            When the year is done, trim the binding and frame your favorite pages as prints.
           </p>
-          <p class="reserve-deadline">Reservations close December 1, 2026.</p>
+
+          <div class="preorder">
+            <p class="preorder-price">
+              <span class="preorder-now">$40</span>
+              <span class="preorder-was">$45</span>
+            </p>
+            <p class="reserve-deadline">Early-bird price through October 15, 2026</p>
+            <a class="btn-preorder" href="https://buy.stripe.com/9B6aEX2vIdgRc3g4rH9Zm00">Pre-order now</a>
+            <p class="reserve-note">Shipping or local pickup available. Secure checkout by Stripe.</p>
+          </div>
+
+          <div class="reserve-divider"><span>or</span></div>
+          <p class="reserve-alt">Not ready to buy? Join the list and I'll email you when the calendars are ready.</p>
 
           <form action="https://docs.google.com/forms/d/e/1FAIpQLScjy0My_nxP83XkBmra2AHibmMsdLbwINPcU4W1mPJadVNd4A/formResponse" method="POST" class="reserve-form" id="reserve-form">
             <div>
@@ -406,7 +487,7 @@
               <label for="rf-qty">How many are you interested in? (optional)</label>
               <input type="number" id="rf-qty" name="entry.1854528746" min="1">
             </div>
-            <button type="submit" class="btn-reserve">Reserve yours now</button>
+            <button type="submit" class="btn-reserve">Join the list</button>
             <p class="reserve-note">I'll only email you about the calendar, nothing else.</p>
           </form>
 
