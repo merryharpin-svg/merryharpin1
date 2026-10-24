@@ -51,6 +51,16 @@
     @keyframes artFade2 {
       0%, 52% { opacity: 0; } 60%, 84% { opacity: 1; } 92%, 100% { opacity: 0; }
     }
+    /* Work collections */
+    .collection-nav { display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin:-1.5rem 0 3rem; }
+    .collection-nav a { font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); transition:color .25s ease; }
+    .collection-nav a:hover { color:var(--pale-blue); }
+    .collection { scroll-margin-top:90px; }
+    .collection + .collection { margin-top:5rem; }
+    .collection-header { margin-bottom:2rem; max-width:620px; }
+    .collection-header h3 { font-family:var(--font-serif); font-size:1.9rem; font-weight:400; color:var(--white-pure); margin-bottom:.4rem; }
+    .collection-header p { color:var(--gray); line-height:1.6; }
+    .collection-header a { color:var(--pale-blue); }
   </style>
 </head>
 <body>
@@ -118,147 +128,194 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
         <span class="section-number">02</span>
         <h2>Work</h2>
       </div>
-      <div class="portfolio-grid">
-        <article class="portfolio-item">
-          <div class="art-set art-set--cycle" aria-label="Self-Portrait, with detail views on hover">
-            <img src="images/IMG_1381_2.jpg" alt="Self-Portrait">
-            <img src="images/IMG_1373.jpg" alt="Self-Portrait, eyes detail" class="art-layer art-layer-1">
-            <img src="images/IMG_1372.jpg" alt="Self-Portrait, nose and mouth detail" class="art-layer art-layer-2">
-            <span class="art-badge" aria-hidden="true">＋ detail</span>
-          </div>
-          <div class="portfolio-info">
-            <h3>Self-Portrait</h3>
-            <p>Charcoal · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/hand-study.jpeg" alt="My Hand">
-          <div class="portfolio-info">
-            <h3>My Hand</h3>
-            <p>Charcoal & Graphite · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/chair-in-massachusetts.jpg" alt="Chair in Massachusetts">
-          <div class="portfolio-info">
-            <h3>Chair in Massachusetts</h3>
-            <p>Charcoal on newsprint · May 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1062.JPG" alt="Bedroom in Forestdale, MA">
-          <div class="portfolio-info">
-            <h3>Bedroom in Forestdale, MA</h3>
-            <p>Charcoal · July 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1176.JPG" alt="Cups">
-          <div class="portfolio-info">
-            <h3>Cups</h3>
-            <p>Charcoal on newsprint · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1186.JPG" alt="My Living Room">
-          <div class="portfolio-info">
-            <h3>My Living Room</h3>
-            <p>Charcoal on newsprint · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1210.JPG" alt="Merry and the Bay Bridge">
-          <div class="portfolio-info">
-            <h3>Merry and the Bay Bridge</h3>
-            <p>Charcoal on newsprint · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1198.JPG" alt="Cedar Waxwing">
-          <div class="portfolio-info">
-            <h3>Cedar Waxwing</h3>
-            <p>18 × 24 · Charcoal, graphite & chalk pastel · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1053.jpg" alt="Posing">
-          <div class="portfolio-info">
-            <h3>Posing</h3>
-            <p>Charcoal, graphite</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1325.jpg" alt="Cormorant">
-          <div class="portfolio-info">
-            <h3>Double -crested Cormorant</h3>
-            <p>Charcoal, chalk pastel · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_0084.jpg" alt="Me, Merry">
-          <div class="portfolio-info">
-            <h3>Me, Merry</h3>
-            <p>Graphite pencil · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_0734_2.jpg" alt="Woman in the Street">
-          <div class="portfolio-info">
-            <h3>Woman in the Street</h3>
-            <p>Charcoal · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1256.jpg" alt="Head and Shoulders">
-          <div class="portfolio-info">
-            <h3>Head and Shoulders</h3>
-            <p>Charcoal · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <div class="art-set art-set--cycle" aria-label="Double-crested Cormorant, with detail views on hover">
-            <img src="images/IMG_1517.jpg" alt="Double-crested Cormorant">
-            <img src="images/IMG_1485.jpg" alt="Double-crested Cormorant, head detail" class="art-layer art-layer-1">
-            <img src="images/IMG_1482.jpg" alt="Double-crested Cormorant, eye detail" class="art-layer art-layer-2">
-            <span class="art-badge" aria-hidden="true">＋ detail</span>
-          </div>
-          <div class="portfolio-info">
-            <h3>Double-crested Cormorant</h3>
-            <p>Charcoal, chalk pastel · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <div class="art-set art-set--single" aria-label="Hooded Merganser, with a detail view on hover">
-            <img src="images/IMG_1662.jpg" alt="Hooded Merganser">
-            <img src="images/IMG_1660.jpg" alt="Hooded Merganser, detail" class="art-layer art-layer-1">
-            <span class="art-badge" aria-hidden="true">＋ detail</span>
-          </div>
-          <div class="portfolio-info">
-            <h3>Hooded Merganser</h3>
-            <p>Charcoal · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1437_2.jpg" alt="Me posing for Me">
-          <div class="portfolio-info">
-            <h3> Posing for Me</h3>
-            <p>Charcoal · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_1972.jpg" alt="Me posing for Me">
-          <div class="portfolio-info">
-            <h3> Posing for Me</h3>
-            <p>Graphite · 2026</p>
-          </div>
-        </article>
-        <article class="portfolio-item">
-          <img src="images/IMG_9840.jpg" alt="Drawing for Mom">
-          <div class="portfolio-info">
-            <h3>Drawing for Mom</h3>
-            <p>Charcoal & pastel · 2026</p>
-          </div>
-        </article>
+      <nav class="collection-nav" aria-label="Collections">
+        <a href="#birds">Birds</a>
+        <a href="#portraits">Portraits &amp; Figures</a>
+        <a href="#everyday">Interiors &amp; Everyday Life</a>
+      </nav>
+
+      <!-- Collection: Birds -->
+      <div class="collection" id="birds">
+        <div class="collection-header">
+          <h3>Birds</h3>
+          <p>Birds I watch on my walks and travels, and the drawings behind my <a href="calendar.html">Birds of New England 2027</a> calendar.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-item">
+            <img src="images/bird-snowy-owl.jpg" alt="Snowy owl perched on a pine branch">
+            <div class="portfolio-info">
+              <h3>Snowy Owl</h3>
+              <p>Birds of New England 2027 · December</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/bird-loon.jpg" alt="Common loon floating on grey water">
+            <div class="portfolio-info">
+              <h3>Common Loon</h3>
+              <p>Birds of New England 2027 · May</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/bird-cormorant-calendar.jpg" alt="Double-crested cormorant standing on a rock">
+            <div class="portfolio-info">
+              <h3>Double-crested Cormorant</h3>
+              <p>Birds of New England 2027 · August and cover</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1198.JPG" alt="Cedar waxwing perched on a branch with berries">
+            <div class="portfolio-info">
+              <h3>Cedar Waxwing</h3>
+              <p>18 × 24 · Charcoal, graphite &amp; chalk pastel · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <div class="art-set art-set--single" aria-label="Hooded Merganser, with a detail view on hover">
+              <img src="images/IMG_1662.jpg" alt="Hooded merganser swimming">
+              <img src="images/IMG_1660.jpg" alt="Hooded merganser, detail" class="art-layer art-layer-1">
+              <span class="art-badge" aria-hidden="true">＋ detail</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Hooded Merganser</h3>
+              <p>Charcoal · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <div class="art-set art-set--cycle" aria-label="Double-crested Cormorant study, with detail views on hover">
+              <img src="images/IMG_1517.jpg" alt="Double-crested cormorant, charcoal study">
+              <img src="images/IMG_1485.jpg" alt="Double-crested cormorant, head detail" class="art-layer art-layer-1">
+              <img src="images/IMG_1482.jpg" alt="Double-crested cormorant, eye detail" class="art-layer art-layer-2">
+              <span class="art-badge" aria-hidden="true">＋ detail</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Double-crested Cormorant, Study</h3>
+              <p>Charcoal, chalk pastel · 2026</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Collection: Portraits & Figures -->
+      <div class="collection" id="portraits">
+        <div class="collection-header">
+          <h3>Portraits &amp; Figures</h3>
+          <p>Self-portraits and figure studies, drawn from life and the mirror.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-item">
+            <div class="art-set art-set--cycle" aria-label="Self-Portrait, with detail views on hover">
+              <img src="images/IMG_1381_2.jpg" alt="Self-portrait in charcoal">
+              <img src="images/IMG_1373.jpg" alt="Self-portrait, eyes detail" class="art-layer art-layer-1">
+              <img src="images/IMG_1372.jpg" alt="Self-portrait, nose and mouth detail" class="art-layer art-layer-2">
+              <span class="art-badge" aria-hidden="true">＋ detail</span>
+            </div>
+            <div class="portfolio-info">
+              <h3>Self-Portrait</h3>
+              <p>Charcoal · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1256.jpg" alt="Head and shoulders portrait in charcoal">
+            <div class="portfolio-info">
+              <h3>Head and Shoulders</h3>
+              <p>Charcoal · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_0084.jpg" alt="Self-portrait in graphite, signed Merry">
+            <div class="portfolio-info">
+              <h3>Me, Merry</h3>
+              <p>Graphite pencil · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_9840.jpg" alt="Line portrait with a brown pastel shape beside the face">
+            <div class="portfolio-info">
+              <h3>Drawing for Mom</h3>
+              <p>Charcoal &amp; pastel · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1437_2.jpg" alt="Standing figure study in charcoal">
+            <div class="portfolio-info">
+              <h3>Posing for Me</h3>
+              <p>Charcoal · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1972.jpg" alt="Standing figure study in graphite">
+            <div class="portfolio-info">
+              <h3>Posing for Me, Graphite Study</h3>
+              <p>Graphite · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1053.jpg" alt="Seated figure in a kitchen">
+            <div class="portfolio-info">
+              <h3>Posing</h3>
+              <p>Charcoal &amp; graphite</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/hand-study.jpeg" alt="Study of the artist's hand">
+            <div class="portfolio-info">
+              <h3>My Hand</h3>
+              <p>Charcoal &amp; graphite · 2026</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Collection: Interiors & Everyday Life -->
+      <div class="collection" id="everyday">
+        <div class="collection-header">
+          <h3>Interiors &amp; Everyday Life</h3>
+          <p>Rooms, objects and streets: the ordinary places where beauty waits to be noticed.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-item">
+            <img src="images/IMG_1176.JPG" alt="Cups on a table, charcoal on newsprint">
+            <div class="portfolio-info">
+              <h3>Cups</h3>
+              <p>Charcoal on newsprint · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/chair-in-massachusetts.jpg" alt="A chair in a Massachusetts room">
+            <div class="portfolio-info">
+              <h3>Chair in Massachusetts</h3>
+              <p>Charcoal on newsprint · May 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1062.JPG" alt="Bedroom interior in Forestdale, Massachusetts">
+            <div class="portfolio-info">
+              <h3>Bedroom in Forestdale, MA</h3>
+              <p>Charcoal · July 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1186.JPG" alt="The artist's living room">
+            <div class="portfolio-info">
+              <h3>My Living Room</h3>
+              <p>Charcoal on newsprint · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_1210.JPG" alt="Figure in a hat in front of the Bay Bridge">
+            <div class="portfolio-info">
+              <h3>Merry and the Bay Bridge</h3>
+              <p>Charcoal on newsprint · 2026</p>
+            </div>
+          </article>
+          <article class="portfolio-item">
+            <img src="images/IMG_0734_2.jpg" alt="Woman walking on a city street">
+            <div class="portfolio-info">
+              <h3>Woman in the Street</h3>
+              <p>Charcoal · 2026</p>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
