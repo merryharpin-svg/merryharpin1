@@ -61,12 +61,6 @@
     .collection-header h3 { font-family:var(--font-serif); font-size:1.9rem; font-weight:400; color:var(--white-pure); margin-bottom:.4rem; }
     .collection-header p { color:var(--gray); line-height:1.6; }
     .collection-header a { color:var(--pale-blue); }
-    /* quote band */
-    .quote-band { padding: 2rem 0 5rem; text-align: center; }
-    .quote-band blockquote { margin: 0 auto; max-width: 720px; padding: 0 1.5rem; }
-    .quote-band p { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight: 300; font-style: italic; line-height: 1.35; color: var(--white); margin: 0 0 1.1rem; }
-    .quote-band cite { display: block; font-style: normal; font-family: var(--font-sans, 'Outfit', sans-serif); font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; color: var(--pale-blue); }
-    .quote-band cite::before { content: ""; display: block; width: 36px; height: 1px; background: var(--pale-blue); margin: 0 auto 1rem; opacity: .7; }
   </style>
 </head>
 <body>
@@ -127,14 +121,6 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Quote -->
-  <section class="quote-band" aria-label="Quote">
-    <blockquote>
-      <p>&ldquo;Art is a measure of one&rsquo;s permeability.&rdquo;</p>
-      <cite>Merry Harpin</cite>
-    </blockquote>
   </section>
 
   <!-- Work -->
@@ -355,7 +341,7 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Merry Harpin. All rights reserved.</p>
+      <p>© <span id="year">2026</span> Merry Harpin. All rights reserved.</p>
       <p class="footer-note">A pupil of Beauty</p>
     </div>
   </footer>
@@ -391,5 +377,6 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
       });
     });
   </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
