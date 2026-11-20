@@ -51,7 +51,7 @@
     .wire-cal-paper {
       position: relative;
       background: #fbfaf7;
-      box-shadow: 0 30px 65px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 24px 50px rgba(60, 45, 30, 0.22);
       padding: 30px 22px 26px;
     }
     .wire-cal-wire {
@@ -80,7 +80,7 @@
 
     .cal-body {
       background: var(--black-soft);
-      border: 1px solid rgba(168, 197, 212, 0.12);
+      border: 1px solid rgba(43, 41, 37, 0.13);
       padding: 2.2rem 1.8rem 2.4rem;
     }
     .cal-body h2 {
@@ -91,8 +91,12 @@
       text-align: center;
     }
     .cal-body p.lead {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
       color: var(--gray);
-      line-height: 1.7;
+      line-height: 1.75;
       margin-bottom: 1rem;
       text-align: center;
     }
@@ -124,8 +128,8 @@
     .reserve-form input {
       width: 100%;
       box-sizing: border-box;
-      background: #111;
-      border: 1px solid rgba(168, 197, 212, 0.2);
+      background: #ebe5d9;
+      border: 1px solid rgba(43, 41, 37, 0.22);
       color: inherit;
       font-family: var(--font-sans);
       font-size: 0.95rem;
@@ -229,7 +233,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(168, 197, 212, 0.15);
+      background: rgba(43, 41, 37, 0.17);
     }
     .reserve-alt {
       max-width: 420px;
@@ -283,9 +287,9 @@
       top: calc(100% + 0.75rem);
       left: 50%;
       transform: translateX(-50%) translateY(-8px);
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(246, 242, 234, 0.96);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(168, 197, 212, 0.12);
+      border: 1px solid rgba(43, 41, 37, 0.13);
       padding: 0.6rem 0;
       min-width: 210px;
       display: flex;
@@ -309,7 +313,7 @@
     }
     .dropdown-menu a:hover {
       color: var(--pale-blue);
-      background: rgba(168, 197, 212, 0.06);
+      background: rgba(43, 41, 37, 0.07);
     }
     @media (max-width: 680px) {
       .dropdown-menu {
@@ -333,7 +337,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(246, 242, 234, 0.97);
       z-index: 9999;
       align-items: center;
       justify-content: center;
@@ -366,6 +370,7 @@
         <li><a href="index.html#work">Work</a></li>
         <li><a href="photography.html">Photography</a></li>
         <li><a href="design.html">Design</a></li>
+        <li><a href="mfa.html">MFA</a></li>
         <li class="has-dropdown">
           <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
           <div class="dropdown-menu">
@@ -410,13 +415,13 @@
         </div>
       </div>
 
-      <p class="gal-note" data-note="default" style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+      <p class="gal-note" data-note="default" style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#6f6a62;">
         The cover bird and August are both double-crested cormorants — one of my favorite birds. I've seen them all summer here, and I visit them on my morning walks at the pond near my house.
       </p>
-      <p class="gal-note" data-note="may" hidden style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+      <p class="gal-note" data-note="may" hidden style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#6f6a62;">
         Loons have always felt like a bird from a story to me. I've never seen one in person. I spent the last seven years in New Orleans, and it turns out many loons spend their winters along that same Gulf Coast, so we may have been closer than I knew. In May they move through Connecticut in their black-and-white breeding feathers, heading north to nest. I hope to finally see one.
       </p>
-      <p class="gal-note" data-note="december" hidden style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#b7b3ab;">
+      <p class="gal-note" data-note="december" hidden style="max-width:470px; margin:1.6rem auto 0; text-align:center; font-style:italic; font-size:1rem; line-height:1.6; color:#6f6a62;">
         Last Christmas I was on Cape Cod with my mom, driving to the grocery store, when I spotted a snowy owl sitting in a nest. "Mom, pull over right now!" We stopped traffic, I ran across the street, and I circled that tree looking up, only to find it was just a clump of snow. I still haven't seen one, but snowy owls are one of my favorite birds, and I'm hoping this is the winter I finally do.
       </p>
     </div>
@@ -424,11 +429,11 @@
     <style>
       .gallery{display:flex;gap:1rem;align-items:flex-start;justify-content:center;max-width:620px;margin:0 auto;}
       .gallery-thumbs{display:flex;flex-direction:column;gap:.7rem;flex:0 0 auto;}
-      .gthumb{padding:0;background:none;border:1px solid rgba(168,197,212,0.25);border-radius:3px;cursor:pointer;
+      .gthumb{padding:0;background:none;border:1px solid rgba(43, 41, 37, 0.28);border-radius:3px;cursor:pointer;
         width:64px;height:84px;overflow:hidden;transition:border-color .2s,opacity .2s;opacity:.7;}
       .gthumb img{width:100%;height:100%;object-fit:cover;display:block;}
       .gthumb:hover{opacity:1;}
-      .gthumb.is-active{border-color:#a8c5d4;opacity:1;}
+      .gthumb.is-active{border-color:#9a5b3f;opacity:1;}
       .gallery-main{flex:1 1 auto;max-width:440px;}
       .gallery-main img{width:100%;height:auto;display:block;border-radius:2px;}
       @media(max-width:520px){
@@ -463,12 +468,11 @@
         <div class="cal-body">
           <h2>Purchase calendars</h2>
           <p class="lead">
-            Twelve original bird drawings, one for every month, each named — a
-            title-page and a back page with all twelve
-            birds — all hand-drawn in charcoal and graphite, with
-            oil and soft pastels. Each calendar measures 11 × 17 inches, printed with
-            soy-free ink and wire-bound to hang.
-            When the year is done, please do keep your favorites and frame them. They are printed on heavy stock and would look so lovely in a frame.
+            Twelve original bird drawings, one for every month, plus a title page
+            and a back page with all twelve birds. Each one is hand-drawn in charcoal
+            and graphite with oil and soft pastels. The calendar measures 11 × 17 inches,
+            printed with soy-free ink on heavy stock and wire-bound to hang.
+            When the year is done, keep your favorites and frame them.
           </p>
 
           <div class="preorder">
