@@ -25,7 +25,8 @@
   <style>
     /* Hover-to-see-detail image set (used for multi-view pieces) */
     .art-set { position: relative; display: block; overflow: hidden; }
-    .art-set > img { display: block; width: 100%; }
+    .art-set > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+    .art-set .art-layer { background: #ebe5d9; object-fit: contain !important; }
     .art-set .art-layer {
       position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; opacity: 0; transition: opacity .6s ease;
@@ -73,6 +74,7 @@
 <li><a href="index.html#work">Work</a></li>
 <li><a href="photography.html">Photography</a></li>
         <li><a href="design.html">Design</a></li>
+        <li><a href="mfa.html">MFA</a></li>
         <li class="has-dropdown">
           <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
           <div class="dropdown-menu">
@@ -100,6 +102,7 @@
     </div>
     <div class="hero-line"></div>
   </header>
+
 
   <!-- About -->
   <section id="about" class="section about">
@@ -154,7 +157,7 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
           <article class="portfolio-item">
             <img src="bird-duck-scan.jpg" alt="Duck with a brown head and yellow eye swimming on blue water" loading="lazy" decoding="async">
             <div class="portfolio-info">
-              <h3>Common Goldeneye - Female</h3>
+              <h3>Common Goldeneye (Female)</h3>
               <p>Charcoal &amp; pastel</p>
             </div>
           </article>
@@ -371,22 +374,24 @@ Her work is guided by the sacred dimensions of the everyday, deeply rooted in be
     <div class="container redlips-inner">
       <img src="portrait-red-lips.jpg" alt="Portrait of a woman with long dark hair and red lips, in charcoal and pastel" loading="lazy" decoding="async">
       <div class="redlips-text">
-        <p class="redlips-kicker">Merry's Fine Art</p>
-        <h2>Red Lips</h2>
-        <p class="redlips-meta">Charcoal &amp; pastel</p>
-        <p class="redlips-founder">Merry Harpin<br>Founder of MFA (Merry's Fine Art)</p>
+        <h2>MFA</h2>
+        <p class="redlips-meta">Merry's Fine Art</p>
+        <p class="redlips-founder">Merry Harpin, Founder</p>
+        <br><a class="redlips-link" href="mfa.html">Visit MFA</a>
       </div>
     </div>
   </section>
   <style>
-    .redlips { background: linear-gradient(160deg, #3a0d14 0%, #5a1520 55%, #2a0a10 100%); padding: 6rem 0; }
-    .redlips-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
-    .redlips-inner img { width: 100%; max-width: 460px; justify-self: end; height: auto; box-shadow: 0 20px 50px rgba(0,0,0,.45); }
-    .redlips-kicker { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: #e8b4b8; margin-bottom: 1rem; }
-    .redlips-text h2 { font-family: var(--font-serif); font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 400; color: #fff; line-height: 1.1; }
-    .redlips-meta { color: #e8c9cb; margin: .6rem 0 2.2rem; font-size: .95rem; }
-    .redlips-founder { font-family: var(--font-serif); font-size: 1.35rem; color: #fff; line-height: 1.6; border-top: 1px solid rgba(232,180,184,.4); padding-top: 1.4rem; display: inline-block; }
-    @media (max-width: 760px) { .redlips { padding: 4rem 0; } .redlips-inner { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; } .redlips-inner img { justify-self: center; } }
+    .redlips { background: var(--black-soft); padding: 7rem 0; border-top: 1px solid rgba(43, 41, 37, 0.10); border-bottom: 1px solid rgba(43, 41, 37, 0.10); }
+    .redlips-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: center; }
+    .redlips-inner img { width: 100%; max-width: 420px; justify-self: end; height: auto; box-shadow: 0 18px 40px rgba(60, 45, 30, .18); }
+    .redlips-kicker { font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: #b02e26; margin-bottom: 1rem; }
+    .redlips-text h2 { font-family: var(--font-serif); font-size: clamp(3rem, 7vw, 4.6rem); font-weight: 500; letter-spacing: .14em; color: #b02e26; line-height: 1; }
+    .redlips-meta { color: var(--white); margin: .7rem 0 2rem; font-size: .8rem; letter-spacing: .24em; text-transform: uppercase; }
+    .redlips-founder { font-family: var(--font-serif); font-size: 1.3rem; color: var(--white); line-height: 1.6; border-top: 2px solid #b02e26; padding-top: 1.3rem; display: inline-block; }
+    .redlips-link { display: inline-block; margin-top: 1.6rem; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: #b02e26; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .redlips-link:hover { opacity: .75; }
+    @media (max-width: 760px) { .redlips { padding: 4.5rem 0; } .redlips-inner { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; } .redlips-inner img { justify-self: center; } }
   </style>
 
   <section id="contact" class="section contact">
