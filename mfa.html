@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2RK9Q93P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2RK9Q93P8');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFA · Merry's Fine Art | Merry Harpin</title>
+  <meta name="description" content="MFA, Merry's Fine Art: the fine art brand of Connecticut artist Merry Harpin, with woodless drawing pencils and their kraft pencil box.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ds-hero { padding: 8rem 0 3rem; text-align: center; }
+    .ds-hero h1 { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; margin-bottom: .6rem; }
+    .ds-hero p { color: var(--gray); font-size: 1.05rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .mfa-hero { padding: 8.5rem 0 5rem; }
+    .mfa-hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: center; }
+    .mfa-hero-inner img { width: 100%; max-width: 420px; justify-self: end; height: auto; box-shadow: 0 18px 40px rgba(60, 45, 30, .18); }
+    .mfa-hero-text h1 { font-family: var(--font-serif); font-size: clamp(3.4rem, 8vw, 5.4rem); font-weight: 500; letter-spacing: .14em; color: #b02e26; line-height: 1; }
+    .mfa-sub { margin: .8rem 0 1.8rem; font-size: .82rem; letter-spacing: .24em; text-transform: uppercase; color: var(--white); }
+    .mfa-intro { max-width: 420px; color: var(--gray); line-height: 1.8; font-size: .98rem; padding-top: 1.4rem; border-top: 2px solid #b02e26; }
+    .mfa-founder { margin-top: 1.4rem; font-family: var(--font-serif); font-size: 1.25rem; color: var(--white); }
+    @media (max-width: 760px) { .mfa-hero { padding: 7rem 0 3.5rem; } .mfa-hero-inner { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; } .mfa-hero-inner img { justify-self: center; } .mfa-intro { margin: 0 auto; } }
+    .ds-group { margin-bottom: 6rem; }
+    .ds-group-head { max-width: 620px; margin-bottom: 3rem; }
+    .ds-group-head h2 { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--white-pure); margin-bottom: .4rem; }
+    .ds-group-head p { color: var(--gray); line-height: 1.7; }
+    .ds-row { display: grid; grid-template-columns: 7fr 5fr; gap: 3.5rem; align-items: center; }
+    .ds-row + .ds-row { margin-top: 4.5rem; }
+    .ds-row.flip { grid-template-columns: 5fr 7fr; }
+    .ds-row.flip .ds-frame { order: 2; }
+    .ds-frame { aspect-ratio: 3 / 2; overflow: hidden; background: #e4ddd0; }
+    .ds-frame img { display: block; width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .6s ease; }
+    .ds-frame:hover img { transform: scale(1.02); }
+    .ds-kind { font-size: .74rem; color: var(--pale-blue); letter-spacing: .18em; text-transform: uppercase; margin-bottom: .7rem; }
+    .ds-text h3 { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; color: var(--white-pure); line-height: 1.15; margin-bottom: .9rem; }
+    .ds-desc { color: var(--gray); line-height: 1.8; font-size: .95rem; }
+    .ds-specs { margin-top: 1.2rem; border-top: 1px solid rgba(43, 41, 37, 0.14); }
+    .ds-specs li { display: flex; justify-content: space-between; gap: 1rem; padding: .55rem 0; border-bottom: 1px solid rgba(43, 41, 37, 0.14); font-size: .82rem; color: var(--gray); }
+    .ds-specs li span:first-child { letter-spacing: .08em; text-transform: uppercase; font-size: .72rem; color: var(--white); }
+    .ds-note { max-width: 560px; margin: 0 auto 5rem; text-align: center; color: var(--gray); line-height: 1.8; font-size: .95rem; }
+    .ds-note a { color: var(--pale-blue); }
+    @media (max-width: 800px) {
+      .ds-row, .ds-row.flip { grid-template-columns: 1fr; gap: 1.4rem; }
+      .ds-row.flip .ds-frame { order: 0; }
+      .ds-row + .ds-row { margin-top: 3.5rem; }
+    }
+    /* lightbox */
+    .lb { position: fixed; inset: 0; background: rgba(246, 242, 234, 0.96); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 2rem; cursor: zoom-out; }
+    .lb.open { display: flex; }
+    .lb img { max-width: 100%; max-height: 90vh; object-fit: contain; }
+    .lb-cap { position: absolute; bottom: 1.2rem; left: 0; right: 0; text-align: center; color: var(--gray); font-size: .85rem; letter-spacing: .03em; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Merry Harpin</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="mfa.html">MFA</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Shop</button>
+          <div class="dropdown-menu">
+            <a href="shop.html">Original Drawings</a>
+            <a href="calendar.html">Birds of New England</a>
+            <a href="postcards.html">Bird Postcards</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="mfa-hero">
+    <div class="container mfa-hero-inner">
+      <img src="portrait-red-lips.jpg" alt="Charcoal and pastel portrait of a woman with long dark hair and red lips, the face of MFA" decoding="async">
+      <div class="mfa-hero-text">
+        <h1>MFA</h1>
+        <p class="mfa-sub">Merry's Fine Art</p>
+        <p class="mfa-intro">MFA is my fine art brand. It began with this charcoal and pastel portrait, and now includes my own woodless drawing pencils and the kraft box they come in.</p>
+        <p class="mfa-founder">Merry Harpin, Founder</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="ds-group">
+        <div class="ds-group-head">
+          <h2>The Pencils</h2>
+          <p>Woodless drawing pencils in red lacquer, and the kraft box they come in.</p>
+        </div>
+
+        <article class="ds-row">
+          <div class="ds-frame"><img src="design-mfa-pencils.jpg" width="1600" height="1100" alt="Five red MFA woodless graphite drawing pencils standing upright against a warm cream wall" data-cap="MFA woodless drawing pencils" decoding="async"></div>
+          <div class="ds-text">
+            <p class="ds-kind">Product design</p>
+            <h3>MFA Drawing Pencils</h3>
+            <p class="ds-desc">Solid graphite with no wood casing, finished in red lacquer and imprinted in white. The bright red carries "Merry's Fine Art"; the barn red carries the little bird and Norwich, CT.</p>
+            <ul class="ds-specs">
+              <li><span>Core</span><span>Solid graphite</span></li>
+              <li><span>Finish</span><span>Red &amp; barn-red lacquer</span></li>
+              <li><span>Grades</span><span>2B · 4B · 6B · 8B</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ds-row flip">
+          <div class="ds-frame"><img src="design-mfa-pencil-box.jpg" width="1600" height="1100" alt="Kraft pencil box for MFA with a cream paper band, red MFA lettering and a red ink stamp, beside an open tray of four red pencils" data-cap="MFA pencil box · set of four" loading="lazy" decoding="async"></div>
+          <div class="ds-text">
+            <p class="ds-kind">Packaging</p>
+            <h3>The Pencil Box</h3>
+            <p class="ds-desc">A plain kraft box with a cream paper band and a red rubber-stamp roundel, made to keep on the desk after the pencils come out.</p>
+            <ul class="ds-specs">
+              <li><span>Box</span><span>Kraft board, lift-off lid</span></li>
+              <li><span>Label</span><span>Cream band, red MFA</span></li>
+              <li><span>Holds</span><span>Two 4B, two 6B</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="ds-note">
+        <p>Questions about MFA? <a href="index.html#contact">Get in touch</a>. For my label and packaging work, see <a href="design.html">Design</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Merry Harpin. All rights reserved.</p>
+      <p class="footer-note">A pupil of Beauty</p>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" role="dialog" aria-label="Enlarged design">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    const dropdown = document.querySelector('.has-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+    document.querySelectorAll('.ds-frame img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src; lbImg.alt = img.alt; lbCap.textContent = img.dataset.cap || '';
+        lb.classList.add('open');
+      });
+    });
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  </script>
+</body>
+</html>
